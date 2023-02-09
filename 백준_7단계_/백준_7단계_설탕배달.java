@@ -5,29 +5,28 @@ public class 백준_7단계_설탕배달 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int num = sc.nextInt();
-		int big = num / 5; 
-		int small = (num -big*5) / 3 ;
+		int bag = sc.nextInt();
+		int result = 0;
 		
-		if ((num -big*5) % 3 != 0) 
-		{
-			System.out.println(-1);
+		if(bag ==4 || bag ==7) {
+			result = -1;
 		}
-		else if ( (num -big*5) % 3  == 1) 
-		{
-			System.out.println(big + small + 1);
+		else if(bag % 5 == 1 ) {
+			result = (bag/5)-1 + 2;
 		}
-		
-		else if ((num -big*5) % 3  == 2) 
-		{
-			System.out.println(big + small + 1);
+		else if(bag % 5 == 2 || bag % 5 == 4) {
+			result = (bag/5) - 2 + 4;
+		}	
+		else if(bag % 5 == 3) {
+			result = (bag / 5) + 1;
 		}
-		else
-		{
-		System.out.println(big + small);
+		else if(bag % 5 == 4) {
+			result = (bag / 5 ) - 1 + 3;
+		}			
+		else if(bag % 5 == 0) {
+			result = bag / 5;
 		}
-		
-		
+			System.out.println(result);
+	sc.close();
 	}
-
 }

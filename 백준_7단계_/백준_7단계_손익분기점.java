@@ -10,7 +10,7 @@ public class 백준_7단계_손익분기점 {
 		
 		// A는 고정비용 B는 가변비용 C는 수익 
 		
-		long A = sc.nextLong(); // 왜 대문자 L인것인
+		long A = sc.nextLong(); 
 		long B = sc.nextLong();
 		long C = sc.nextLong();
 		long i = 0 ;

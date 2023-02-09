@@ -1,23 +1,20 @@
 package 백준_7단계_;
 
-import java.util.Scanner;
+import java.util.*;
+import java.math.BigInteger;
 
 public class 백준_7단계_큰수 {
-
-	static double sum(double A , double B) {
-		
-		double result = A + B;	
-		
-		return result ;
-	}
 	public static void main(String[] args) {
 	
 		Scanner sc = new Scanner(System.in);
+		String A = sc.next();
+		String B = sc.next();
+		BigInteger big = new BigInteger(A);
+		BigInteger big_2 = new BigInteger(B);
 		
-		double A = sc.nextDouble();
-		double B = sc.nextDouble();
-				
-		System.out.println (sum(A , B));
+		
+		
+		System.out.println (big.add(big_2));
+		sc.close();
 	}
-
 }
