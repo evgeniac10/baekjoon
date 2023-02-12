@@ -1,40 +1,25 @@
 package 백준_8단계_;
-
 import java.util.*;
-
 public class 백준_8단계_소수구하기 {
-
+	static boolean Prime(int num) {
+		if(num<2)
+			return false;
+		for(int i=2; i*i <= num; i++) {
+			if(num % i ==0) {
+				return false;
+			}
+		}
+		return true;
+	}
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		ArrayList<Boolean> arr = new ArrayList<Boolean>();
-		
 		int start = in.nextInt();
 		int finish = in.nextInt();
-		
-		for(int number = start; number<=finish; number++) {
-			if(number < 2) {
-				arr.add(false);
-			}
-				
-			else if(number ==2) {
-				arr.add(true);
-
-			}
-			else {
-				for(int i =2; i< number; i++) {
-					if(number % i ==0) {
-						arr.add(false);
+			for(int j=start; j<=finish; j++) {
+				if(Prime(j) == true) {
+					System.out.println(j);			
 					}
-				}
-				arr.add(true);
-
-			}
-		}
-		for(int i =0; i<arr.size(); i++) {
-			if(arr.get(i) == true) {
-			System.out.println(arr.indexOf(i));
-		}
+			} 
+	in.close();
 	}
- 	}
-
 }

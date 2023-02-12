@@ -1,20 +1,32 @@
 package 백준_8단계_;
 import java.util.*;
-
-public class 백준_8단계_베르트랑공준 {// 10 11 13 17 19 20
-
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		ArrayList<Integer> arr = new ArrayList<Integer>();
-		
-		int num = in.nextInt();
-		int max = num * 2;
-		
-		for(; num<=max; num++ ) {
-			for(int i = 2; i<max; i++) {
-				if(num % i == 0) {
-				}
+public class 백준_8단계_베르트랑공준 {
+	static Boolean Prime(int num){
+		if(num<2) {
+			return false;
+		}
+		for(int i=2; i*i<=num; i++) {
+			if(num%i ==0) {
+				return false;
 			}
 		}
+		return true;
+	}
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		while(true) {
+		int num = in.nextInt();
+			if(num ==0) {
+				break;
+			}
+		int count = 0;
+			for(int i=num+1; i<=num * 2; i++) {
+				if(Prime(i) == true) {
+					count++;	
+				}
+			}	
+		System.out.println(count);
+		}
+		in.close();
 	}
 }
