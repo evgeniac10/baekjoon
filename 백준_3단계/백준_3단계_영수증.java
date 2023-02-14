@@ -6,15 +6,24 @@ public class 백준_3단계_영수증 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int money = sc.nextInt();
-		int thing = sc.nextInt();
-		int price1 = sc.nextInt();
-		int price2 = sc.nextInt();
-		
-		
-		System.out.print(money);
 		
 
-	}
+		int X = sc.nextInt();
+		int N = sc.nextInt();
+		int sum =0;
+		for(int i=0; i<N; i++) {
+			int num_i = sc.nextInt();
+			int thing_i =sc.nextInt();
+			int price = num_i * thing_i;
+			sum = price + sum;
+		}
 
+		if(X == sum) {
+			System.out.print("Yes");
+		}
+		else {
+			System.out.print("No");
+		}
+	sc.close();}
 }
+	

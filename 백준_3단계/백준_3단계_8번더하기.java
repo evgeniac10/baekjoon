@@ -18,7 +18,7 @@ public class 백준_3단계_8번더하기 {
 				System.out.println("Case #" + i + ": " + num_i + " + " + num2_i + " = "+ sum);
 
 		}
-		
+		sc.close();
 	}
 
 }

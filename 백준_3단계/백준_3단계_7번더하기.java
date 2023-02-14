@@ -17,6 +17,7 @@ public class 백준_3단계_7번더하기 {
 			sum = num_i + num2_i;
 			System.out.println("Case #" + i +": "+ sum);
 		}
+	sc.close();
 	}
 
 }
