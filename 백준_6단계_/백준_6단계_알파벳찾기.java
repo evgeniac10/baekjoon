@@ -16,11 +16,14 @@ public class 백준_6단계_알파벳찾기 {
 
 		for (int ch_index = 0; ch_index < name.length(); ch_index++) {
 			int index = name.charAt(ch_index) - 97;
+			if (arr[index] != -1) {
+				continue;
+			}
 			arr[index] = ch_index;
 		}
 
 		for (int i = 0; i < arr.length; i++) {
-			
+
 			System.out.print(arr[i] + " ");
 		}
 		sc.close();

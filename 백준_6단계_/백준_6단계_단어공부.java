@@ -2,28 +2,32 @@ package 백준_6단계_;
 
 import java.util.Scanner;
 
-public class 백준_6단계_단어공부 {
+public class 백준_6단계_단어공부 { 
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
 		String str = sc.next();
 		str = str.toUpperCase();
+
 		int arr[] = new int[26];
-		int max = 0;
-		
+		int count = 0;
+		char result = ',';
+
 		for (int i = 0; i < str.length(); i++) {
-			if (64 < str.charAt(i) && str.charAt(i) < 91) {
-				arr[i] = str.charAt(i) ;
-			} 
+			count = str.charAt(i) - 65;
+			arr[count]++;
 		}
-		for(int j=0; j<arr.length; j++) {
-			if(arr[j] > max) {
-				max = arr[j];
+		int select = 0;
+		
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > select) {
+				select = arr[i];
+				result = (char) (i+65);
+			} else if (arr[i] == select) {
+				result = '?';
 			}
 		}
-
-		System.out.println((char)max);
+		System.out.print(result);
 	}
-
 }
