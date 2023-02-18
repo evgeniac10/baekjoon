@@ -1,6 +1,7 @@
 package 백준_6단계_;
 
 import java.util.Scanner;
+
 public class 백준_6단계_크로아티아알파벳 {
 
 	public static void main(String[] args) {
@@ -10,69 +11,30 @@ public class 백준_6단계_크로아티아알파벳 {
 		String str = sc.next();
 		int count = 0;
 		for (int i = 0; i < str.length(); i++) {
-			if (str.charAt(i) == 'c') {
-				if (str.charAt(i + 1) == '=') {
+			if (i < str.length() - 1) {
+				if (str.charAt(i) == 'c' && str.charAt(i + 1) == '=') {
 					i++;
-					count++;
-				} else if (str.charAt(i + 1) == '-') {
+				} else if (str.charAt(i) == 'c' && str.charAt(i + 1) == '-') {
 					i++;
-					count++;
-				} else {
-					count++;
-					continue;
+				} else if (str.charAt(i) == 'd' && str.charAt(i + 1) == '-') {
+					i++;
+				} else if (str.charAt(i) == 'l' && str.charAt(i + 1) == 'j') {
+					i++;
+				} else if (str.charAt(i) == 'n' && str.charAt(i + 1) == 'j') {
+					i++;
+				} else if (str.charAt(i) == 's' && str.charAt(i + 1) == '=') {
+					i++;
+				} else if (str.charAt(i) == 'z' && str.charAt(i + 1) == '=') {
+					i++;
 				}
-			} else if (str.charAt(i) == 'd') {
-				if (str.charAt(i + 1) == 'z') {
-					if (str.charAt(i + 2) == '=') {
-						i = i + 2;
-						count++;
-					} else {
-						count = count + 2;
-						i++;
-					}
-				} else if (str.charAt(i + 1) == '-') {
-					i++;
-					count++;
-				} else {
-					count++;
-				}
-			} else if (str.charAt(i) == 'l') {
-				if (str.charAt(i + 1) == 'j') {
-					i++;
-					count++;
-				} else {
-					count++;
-					continue;
-				}
-			} else if (str.charAt(i) == 'n') {
-				if (str.charAt(i + 1) == 'j') {
-					i++;
-					count++;
-				} else {
-					count++;
-					continue;
-				}
-			} else if (str.charAt(i) == 's') {
-				if (str.charAt(i + 1) == '=') {
-					i++;
-					count++;
-				} else {
-					count++;
-					continue;
-				}
-			} else if (str.charAt(i) == 'z') {
-				if (str.charAt(i + 1) == '=') {
-					i++;
-					count++;
-				} else {
-					count++;
-					continue;
-				}
-			} else {
-				count++;
 			}
+			if (i < str.length() - 2) {
+				if (str.charAt(i) == 'd' && str.charAt(i + 1) == 'z' && str.charAt(i + 2) == '=') {
+					i = i + 2;
+				}
+			}
+			count++;
 		}
 		System.out.println(count);
 	}
-
 }

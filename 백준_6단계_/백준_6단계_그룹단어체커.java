@@ -8,6 +8,7 @@ public class 백준_6단계_그룹단어체커 {
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
 		int count = num;
+		
 		for (int i = 0; i < num; i++) {
 			String str = sc.next(); // aabac
 			boolean arr[] = new boolean[26];
