@@ -1,37 +1,37 @@
 package 백준;
 
+import java.io.*;
 import java.util.*;
 
 public class 백준_오큰수_17298번 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuffer sb = new StringBuffer();
 
-	public static void main(String[] args) {
+		int N = Integer.parseInt(br.readLine());
+		int[] data = new int[N];
 
-//		isEmpty -> 비었니? 예(true)
-//		!isEmpty ->들어있니? 예(true)
-		Scanner sc = new Scanner(System.in);
-		
-		int T = sc.nextInt();
-		int[] sequence = new int[T];
-		int[] nge = new int[T];
-		Stack<Integer> st = new Stack<>();
-		int i;
-		for(i=0; i<T; i++) {
-			sequence[i] = sc.nextInt();
-		}
-		
-		for(i=0; i<T; i++) {
-			for(int j=T-1; j>i; j--) {
-				if(sequence[i]<sequence[j]) {
-					st.add(sequence[j]);
-//					System.out.println(i);
-					System.out.println(j);
-					System.out.println(sequence[j]);
-				}
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < N; i++)
+			data[i] = Integer.parseInt(st.nextToken());
+
+		Stack<Integer> s = new Stack<>();
+
+		for (int i = 0; i < N; i++) { 	// 3 5 2 7 
+
+			while (!s.isEmpty() && data[s.peek()] < data[i]) {
+				data[s.pop()] = data[i];
 			}
-			//스택에 들어있는거 다 꺼내서 마지막에 남아있는 숫자를 출력
-			
-		}
-		
-	}
 
+			s.add(i);
+		}
+
+		while (!s.isEmpty())
+			data[s.pop()] = -1;
+
+		for (int i = 0; i < N; i++)
+			sb.append(data[i]).append(" ");
+
+		System.out.println(sb);
+	}
 }
