@@ -27,7 +27,7 @@ public class 백준_ROT13_11655번 {
 	                }
 	            }
 	            else {
-	            	sb.append(" ");
+	            	sb.append(str.charAt(i));
 	            }
 		}
 		System.out.println(sb);
