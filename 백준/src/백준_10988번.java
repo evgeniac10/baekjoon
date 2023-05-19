@@ -21,11 +21,9 @@ public class 백준_10988번 {
 			for(int j=str.length(); j>num+1; j--) {
 				sb2.append(str.charAt(j-1));
 			}
-			if(sb.equals(sb2))
+			if(sb.toString().equals(sb2.toString()))
 				System.out.println(1);
 			else
-				System.out.println(sb);
-				System.out.println(sb2);
 				System.out.println(0);
 		}else {//짝수 
 			int num = str.length()/2;
@@ -35,11 +33,9 @@ public class 백준_10988번 {
 			for(int j=str.length(); j>num; j--) {
 				sb2.append(str.charAt(j-1));
 			}
-			if(sb.equals(sb2))
+			if(sb.toString().equals(sb2.toString()))
 				System.out.println(1);
 			else
-				System.out.println(sb);
-				System.out.println(sb2);
 				System.out.println(0);
 		}
 	}
